@@ -1,3 +1,3 @@
-# TE_bootstrap
+# TE_ventas
 
-Proyecto Java Web integrado con Bootstrap
+Ejemplo de una aplicación Web con Java usando patron DAO
