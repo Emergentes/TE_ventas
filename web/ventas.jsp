@@ -10,9 +10,17 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hola mundo</h1>
-        
-        
+        <div class="container">
+            <h1>Punto de venta</h1>
+            <br/>
+            <jsp:include page="WEB-INF/menu.jsp">
+                <jsp:param name="opcion" value="ventas" />
+            </jsp:include>
+            <a href="#" class="btn btn-primary btn-sm">+ Adicionar producto</a>
+            <br/>
+            <br/>
+
+        </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="js/jquery-3.3.1.slim.min.js"></script>
