@@ -2,7 +2,7 @@ package com.emergentes.modelo;
 
 import java.util.Date;
 
-public class Transaccion {
+public class Venta {
     private int id;
     private String cliente_id;
     private String producto_id;
