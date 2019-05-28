@@ -32,8 +32,8 @@ public class ClienteDAOimpl extends ConexionDB implements ClienteDAO{
             PreparedStatement ps = this.conn.prepareStatement("UPDATE clientes set nombre = ?, correo = ?, celular = ? where id = ?");
             ps.setString(1, cliente.getNombre());
             ps.setString(2, cliente.getCorreo());            
-            ps.setString(2, cliente.getCelular());            
-            ps.setInt(3,cliente.getId());
+            ps.setString(3, cliente.getCelular());            
+            ps.setInt(4,cliente.getId());
             ps.executeUpdate();
         }catch(Exception e){
             throw e;

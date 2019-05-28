@@ -18,7 +18,7 @@
                 <jsp:param name="opcion" value="clientes" />
             </jsp:include>
             <br />
-            <a href="#" class="btn btn-primary btn-sm mt-10">+ Adicionar cliente</a>
+            <a href="ClienteControlador?action=add" class="btn btn-primary btn-sm mt-10">+ Adicionar cliente</a>
             <br />
             <br/>
             <br/>

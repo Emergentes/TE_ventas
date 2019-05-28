@@ -40,4 +40,10 @@ public class Cliente {
     public void setCelular(String celular) {
         this.celular = celular;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "id=" + id + ", nombre=" + nombre + ", correo=" + correo + ", celular=" + celular + '}';
+    }
+    
 }

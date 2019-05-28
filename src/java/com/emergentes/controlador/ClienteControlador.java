@@ -31,20 +31,20 @@ public class ClienteControlador extends HttpServlet {
             
             switch(action){
                 case "add":
-                    request.setAttribute("aviso", cli);
-                    request.getRequestDispatcher("frmaviso.jsp").forward(request, response);
+                    request.setAttribute("cliente", cli);
+                    request.getRequestDispatcher("frmcliente.jsp").forward(request, response);
                     break;
                 case "edit":
                     id = Integer.parseInt(request.getParameter("id"));
                     cli = dao.getById(id);
                     System.out.println(cli);
-                    request.setAttribute("aviso", cli);
-                    request.getRequestDispatcher("frmaviso.jsp").forward(request, response);
+                    request.setAttribute("cliente", cli);
+                    request.getRequestDispatcher("frmcliente.jsp").forward(request, response);
                     break;     
                 case "delete":
                     id = Integer.parseInt(request.getParameter("id"));
                     dao.delete(id);
-                    response.sendRedirect(request.getContextPath()+"/ControladorCliente");
+                    response.sendRedirect(request.getContextPath()+"/ClienteControlador");
                     break;
                 case "view":
                     List<Cliente> lista = dao.getAll();
@@ -77,7 +77,7 @@ public class ClienteControlador extends HttpServlet {
             try {
                 ClienteDAO dao = new ClienteDAOimpl();
                 dao.insert(cli);
-                response.sendRedirect(request.getContextPath()+"/ControladorCliente");
+                response.sendRedirect(request.getContextPath()+"/ClienteControlador");
             } catch (Exception ex) {
                 System.out.println("Error " + ex.getMessage());
             }
@@ -85,8 +85,9 @@ public class ClienteControlador extends HttpServlet {
         else{
             try {
                 ClienteDAO dao = new ClienteDAOimpl();
+                System.out.println("DAtos" + cli.toString());
                 dao.update(cli);
-                response.sendRedirect(request.getContextPath()+"/ControladorCliente");
+                response.sendRedirect(request.getContextPath()+"/ClienteControlador");
             } catch (Exception ex) {
                 System.out.println("Error " + ex.getMessage());
             }
