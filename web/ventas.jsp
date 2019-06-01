@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,10 +17,30 @@
             <jsp:include page="WEB-INF/menu.jsp">
                 <jsp:param name="opcion" value="ventas" />
             </jsp:include>
-            <a href="#" class="btn btn-primary btn-sm">+ Adicionar producto</a>
+            <br/>
+            <a href="VentaControlador?action=add" class="btn btn-primary btn-sm mt-10">+ Realizar venta</a>
             <br/>
             <br/>
-
+            <table class="table table-hover">
+                <tr>
+                    <th>Id</th>
+                    <th>Producto</th>
+                    <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <c:forEach var="item" items="${ventas}">
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.producto}</td>
+                        <td>${item.cliente}</td>
+                        <td>${item.fecha}</td>
+                        <td><a href="VentaControlador?action=edit&id=${item.id}">Editar</a></td>
+                        <td><a href="VentaControlador?action=delete&id=${item.id}" onclick="return(confirm('Esta seguro'))">Eliminar</a></td>
+                    </tr>
+                </c:forEach>
+            </table>
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

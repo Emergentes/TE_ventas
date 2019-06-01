@@ -39,8 +39,8 @@ public class ProductoDAOimpl extends ConexionDB implements ProductoDAO{
             PreparedStatement ps = this.conn.prepareStatement("UPDATE productos set nombre = ?, descripcion = ?, precio = ? where id = ?");
             ps.setString(1, producto.getNombre());
             ps.setString(2, producto.getDescripcion());            
-            ps.setFloat(2, producto.getPrecio());            
-            ps.setInt(3,producto.getId());
+            ps.setFloat(3, producto.getPrecio());            
+            ps.setInt(4,producto.getId());
             ps.executeUpdate();
         }catch(Exception e){
             throw e;

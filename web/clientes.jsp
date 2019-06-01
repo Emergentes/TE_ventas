@@ -19,7 +19,6 @@
             </jsp:include>
             <br />
             <a href="ClienteControlador?action=add" class="btn btn-primary btn-sm mt-10">+ Adicionar cliente</a>
-            <br />
             <br/>
             <br/>
             <table class="table table-hover">

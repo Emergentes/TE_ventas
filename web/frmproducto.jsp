@@ -18,30 +18,23 @@
                 <jsp:param name="opcion" value="productos" />
             </jsp:include>
             <br/>
-            <a href="ProductoControlador?action=add" class="btn btn-primary btn-sm">+ Adicionar producto</a>
             <br/>
-            <br/>
-            <table class="table table-hover">
-                <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Precio</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                <c:forEach var="item" items="${productos}">
-                    <tr>
-                        <td>${item.id}</td>
-                        <td>${item.nombre}</td>
-                        <td>${item.descripcion}</td>
-                        <td>${item.precio}</td>
-                        <td><a href="ProductoControlador?action=edit&id=${item.id}">Editar</a></td>
-                        <td><a href="ProductoControlador?action=delete&id=${item.id}" onclick="return(confirm('Esta seguro'))">Eliminar</a></td>
-                    </tr>
-                </c:forEach>
-            </table>
-
+            <form action="ProductoControlador" method="post">
+                <input type="hidden" name="id" value="${producto.id}" />
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" value="${producto.nombre}" class="form-control" placeholder="Escriba nombre del producto">
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripcion</label>
+                    <input type="text" name="descripcion" value="${producto.descripcion}" class="form-control" placeholder="Descripción del producto">
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="number" step="0.01" name="precio" value="${producto.precio}" class="form-control" placeholder="Escriba el precio">
+                </div>                
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
